@@ -58,7 +58,7 @@ function createGrid(size) {
 //reference to grid box
 
 let allGrid = document.getElementsByClassName("grid");
-
+randomColorHover()
 function defaultColor() {
     for (let i = 0; i < allGrid.length; i++) {
         allGrid[i].addEventListener("mouseover", () =>{
@@ -76,7 +76,7 @@ function randomColorHover() {
         })
     }
 }
-randomColorHoverColor();
+
 
 let randNum = Math.floor(Math.random() * 255) + 1
 let randomColor = `rgb(${randNum},${randNum},${randNum})`
