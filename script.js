@@ -8,7 +8,6 @@
  let randomButton = document.getElementById("random")
 
 
-
  createGrid(16);
  
  
@@ -62,7 +61,7 @@ randomColorHover()
 function defaultColor() {
     for (let i = 0; i < allGrid.length; i++) {
         allGrid[i].addEventListener("mouseover", () =>{
-            allGrid[i].style.backgroundColor = "blue";
+            allGrid[i].style.backgroundColor = "lightblue";
             allGrid[i].innerHTML = `${i + 1}`;
         })
     }
@@ -71,24 +70,21 @@ function defaultColor() {
 function randomColorHover() {
     for (let i = 0; i < allGrid.length; i++) {
         allGrid[i].addEventListener("mouseover", () =>{
-            changeRandom();
+            allGrid[i].style.backgroundColor = changeRandom();
             allGrid[i].innerHTML = `${i + 1}`;
         })
     }
 }
-
-
-let randNum = Math.floor(Math.random() * 255) + 1
-let randomColor = `rgb(${randNum},${randNum},${randNum})`
 
 function changeRandom(){
     let randNumA = Math.floor(Math.random() * 255) + 1
     let randNumB = Math.floor(Math.random() * 255) + 1
     let randNumC = Math.floor(Math.random() * 255) + 1
     let randomColor = `rgb(${randNumA},${randNumB},${randNumC})`
-    allGrid[0].style.backgroundColor = randomColor;
     console.log(randomColor);
+    return randomColor
 }
+
 
 
 
