@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background-color: lightgoldenrodyellow;
 }
 
 #container {
@@ -22,4 +23,12 @@ body {
 
 h1 {
     text-align: center;
+}
+
+/* button styling */
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 960px;
 }

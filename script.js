@@ -3,15 +3,32 @@
  //reference to the container
  let container = document.getElementById("container");
 
+ let defaultButton = document.getElementById("default")
+
  let sizeButton = document.getElementById("size");
 
  let randomButton = document.getElementById("random")
 
+ let darkenButton = document.getElementById("darkening")
 
  createGrid(16);
  
  
  let ukuran = 0;
+
+ defaultButton.addEventListener("click", ()=>{
+    defaultColor()
+ })
+
+ darkenButton.addEventListener("click", ()=>{
+    changeDarken()
+ })
+
+ randomButton.addEventListener("click", ()=>{
+    randomColorHover()
+ })
+
+
 
  sizeButton.addEventListener("click", ()=> {
     do {
@@ -21,8 +38,7 @@
     console.log(ukuran)
     deleteAllGrid()
     createGrid(ukuran)
-    // randomColorHover()
-    changeDarken()
+    defaultColor()
  })
 
 function deleteAllGrid(){
@@ -59,7 +75,7 @@ function createGrid(size) {
 
 let allGrid = document.getElementsByClassName("grid");
 // randomColorHover()
-changeDarken()
+defaultColor()
 function defaultColor() {
     for (let i = 0; i < allGrid.length; i++) {
         allGrid[i].addEventListener("mouseover", () =>{
@@ -98,9 +114,10 @@ function changeDarken(){
                 allGrid[i].style.backgroundColor = "black"
                 allGrid[i].style.opacity = tambah
                 console.log(allGrid[i].style.opacity)
+                allGrid[i].innerHTML = `${i + 1}`;
             }
             increase(i)
-            allGrid[i].innerHTML = `${i + 1}`;
+            
         })
     }
     
