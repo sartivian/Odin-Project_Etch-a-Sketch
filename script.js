@@ -21,7 +21,8 @@
     console.log(ukuran)
     deleteAllGrid()
     createGrid(ukuran)
-    randomColorHover()
+    // randomColorHover()
+    changeDarken()
  })
 
 function deleteAllGrid(){
@@ -57,7 +58,8 @@ function createGrid(size) {
 //reference to grid box
 
 let allGrid = document.getElementsByClassName("grid");
-randomColorHover()
+// randomColorHover()
+changeDarken()
 function defaultColor() {
     for (let i = 0; i < allGrid.length; i++) {
         allGrid[i].addEventListener("mouseover", () =>{
@@ -85,7 +87,24 @@ function changeRandom(){
     return randomColor
 }
 
-
+function changeDarken(){
+    for (let i = 0; i < allGrid.length; i++) {
+        allGrid[i].addEventListener("mouseover", () =>{
+            function increase(i){
+                let ambil = +(allGrid[i].style.opacity)
+                console.log(ambil)
+                let tambah = ambil + 0.1
+                console.log(tambah)
+                allGrid[i].style.backgroundColor = "black"
+                allGrid[i].style.opacity = tambah
+                console.log(allGrid[i].style.opacity)
+            }
+            increase(i)
+            allGrid[i].innerHTML = `${i + 1}`;
+        })
+    }
+    
+}
 
 
 
